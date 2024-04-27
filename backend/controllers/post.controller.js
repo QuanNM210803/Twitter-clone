@@ -20,7 +20,7 @@ export const createPost=async (req,res)=>{
 
         if(img){
             const uploadResponse=await cloudinary.uploader.upload(img)
-            img=uploadResponse.secure_url
+            img=uploadResponse.secure_url //chuyển về đường link trong cloudinary
         }
 
         const newPost=new Post({
