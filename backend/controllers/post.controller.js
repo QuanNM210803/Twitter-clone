@@ -161,6 +161,7 @@ export const getLikedPosts=async (req,res)=>{
             path:'comments.user',
             select:'-password'
         })
+        .sort({createdAt:-1})
         res.status(200).json(likedPosts)
     } catch (error) {
         console.log('Error in getLikedPosts controller:', error)
